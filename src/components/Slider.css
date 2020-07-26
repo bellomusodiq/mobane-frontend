@@ -1,0 +1,66 @@
+.Slider {
+    width: 100%;
+    height: 300px;
+    margin: 100px 0;
+}
+.Slide {
+    width: 80%;
+    margin: auto;
+    overflow-x: scroll;
+    height: 100%;
+    transition: .4s ease-in-out all;
+}
+.Slide > div {
+    width: 100%;
+    height: 100%;
+}
+.Slide {
+    overflow: auto;
+    white-space: nowrap;
+  }
+  
+.Slider > div {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+  }
+.red {
+    background: red;
+    width: 100%;
+    height: 400px;
+}
+.blue {
+    background: blue;
+    width: 100%;
+    height: 400px;
+}
+.green {
+    background: green;
+    width: 100%;
+    height: 400px;
+}
+.yellow {
+    background: yellow;
+    width: 100%;
+    height: 400px;
+}
+.black {
+    background: black;
+    width: 100%;
+    height: 400px;
+}
+.Btns {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+@media screen and (max-width: 780px) {
+    .Slide {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .SliderItem {
+        width: 90%;
+    }
+}

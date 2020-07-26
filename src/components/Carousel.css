@@ -1,0 +1,86 @@
+.Carousel {
+    padding: 0 25%;
+    /* background: gray; */
+    background: url('../assets/images/3446658@2x.png');
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+h1 {
+    font-weight: normal;
+    margin: 0;
+    font-size: 2.5em;
+    color: #707070;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.Carousel * {
+    color: white;
+}
+p {
+    margin: 0;
+    font-size: .8em;
+    color: #6A6161;
+}
+a.btn- {
+    background: #058AF4;
+    margin-top: 50px;
+    padding: 5px 30px;
+    border-radius: 2.5px;
+    text-decoration: none;
+    color: inherit;
+}
+.carousel-control-next, div.carousel.slide a.carousel-control-next-icon {
+    color: black!important;
+}
+.sr-only {
+    color: black;
+}
+.SliderItem {
+    width: 60%;
+    margin: auto;
+    margin-top: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
+    box-sizing: border-box;
+}
+.SliderImage {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    margin: auto;
+}
+.Name {
+    font-size: 1.2em;
+    color: #707070;
+    margin-top: 10px;
+}
+@media screen and (max-width: 780px) {
+    .Carousel {
+        height: 400px;
+        padding: 0 5%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .Carousel {
+        padding: 20px 0;
+    }
+    .Carousel > h1 {
+        font-size: 1.4em;
+    }
+    .SliderItem {
+        width: 100%;
+    }
+    .What {
+        font-size: 1.4em;
+    }
+}

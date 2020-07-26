@@ -1,0 +1,40 @@
+.Contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Card {
+    width: 50%;
+    background: white;
+    border-radius: 10px;
+    margin-top: 70px;
+    padding: 2.5%;
+}
+.Card > * {
+    width: 100%;
+    border: none;
+    margin-top: 5px;
+}
+.Card > input, .Card > textarea {
+    background: #F1F1F1;
+    padding: 5px;
+}
+textarea {
+    overflow-y: auto;
+}
+.Send {
+    padding: 10px 0;
+    border-radius: 5px;
+    background: #058AF4;
+    color: #fff;
+}
+@media screen and (max-width: 780px) {
+    .Card {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .Card {
+        width: 100%;
+    }
+}

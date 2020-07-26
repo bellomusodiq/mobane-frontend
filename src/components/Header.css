@@ -1,0 +1,22 @@
+.Header {
+    padding: 10px 10%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100vw;
+    height: 60px;
+    background: white;
+    align-items: center;
+    z-index: 100;
+}
+.NavItems > a {
+    margin-left: 30px;
+}
+@media screen and (max-width: 500px) {
+    .Header {
+        justify-content: center;
+    }
+    .NavItems {
+        display: none;
+    }
+}

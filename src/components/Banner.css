@@ -1,0 +1,31 @@
+.Banner {
+    margin: 0;
+    background: url('../assets/images/184@2x.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 300px;
+    padding: 100px 0;
+}
+.Banner * {
+    margin: 0;
+    color: white;
+}
+.Banner > a {
+    color: white!important;
+}
+@media screen and (max-width: 780px) {
+    .Banner {
+        padding: 20px;
+        height: 250px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .Banner {
+        height: 200px;
+    }
+    .Banner > h1 {
+        font-size: 1.4em;
+    }
+}
