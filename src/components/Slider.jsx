@@ -40,7 +40,7 @@ const Slider = props => {
                     <p><i>{comment.location}</i></p>
                     <p className="Content">
                         {comment.comment}
-                        </p>
+                    </p>
                 </div>
             </Carousel.Item>
         ))
