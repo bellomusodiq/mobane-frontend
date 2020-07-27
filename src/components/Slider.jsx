@@ -1,59 +1,56 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import './Slider.css';
 import { useRef } from 'react';
 import { useState } from 'react';
 import { Carousel } from 'react-bootstrap';
-import Image from '../assets/images/adult-african-blur-813940@2x.png';
+import { BASE_URL } from '../CONFIG';
+import axios from 'axios';
+import Loading from './Loading';
 
 
 
 const Slider = props => {
 
     const sliderRef = useRef(null);
-    const [counter, changeCounter] = useState(0);
+    const [loading, changeLoading] = useState(false);
+    const [comments, changeComments] = useState([]);
 
-    const slideImage = movement => {
-        if (movement === 'next') {
-            let childrenWidth = sliderRef.current.children[0].clientWidth;
-            console.log(childrenWidth)
-            sliderRef.current.style.scro = `translateX(-1000px)`;
-            // changeCounter(counter + 1);
-        }
+    useEffect(() => {
+        changeLoading(true);
+        const url = BASE_URL + '/api/comments/';
+        axios.get(url)
+            .then(res => {
+                changeLoading(false);
+                changeComments(res.data.results);
+            })
+    }, [])
+
+    let commentList;
+
+    if (loading) {
+        commentList = <Loading />
     }
+
+    if (comments.length > 0) {
+        commentList = comments.map(comment => (
+            <Carousel.Item key={comment.id}>
+                <div className="SliderItem">
+                    <img src={comment.image} alt="" className="SliderImage" />
+                    <h3 className="Name">{comment.name}</h3>
+                    <p><i>{comment.location}</i></p>
+                    <p className="Content">
+                        {comment.comment}
+                        </p>
+                </div>
+            </Carousel.Item>
+        ))
+    }
+
     return (
         <div className="">
             <h1 className="What" style={{ textAlign: 'center', marginTop: 100 }}>What Our Customer Say</h1>
             <Carousel>
-                <Carousel.Item>
-                    <div className="SliderItem">
-                        <img src={Image} alt="" className="SliderImage"/>
-                        <h3 className="Name">Milda Ogunsanya</h3>
-                        <p><i>London</i></p>
-                        <p className="Content">
-                        These guys handle your business like it is theirs. They go over and beyond to make sure you are satisfied. no cutting corners and no false services!
-                        </p>
-                    </div>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <div className="SliderItem">
-                        <img src={Image} alt="" className="SliderImage"/>
-                        <h3 className="Name">Milda Ogunsanya</h3>
-                        <p><i>London</i></p>
-                        <p className="Content">
-                        These guys handle your business like it is theirs. They go over and beyond to make sure you are satisfied. no cutting corners and no false services!
-                        </p>
-                    </div>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <div className="SliderItem">
-                        <img src={Image} alt="" className="SliderImage"/>
-                        <h3 className="Name">Milda Ogunsanya</h3>
-                        <p><i>London</i></p>
-                        <p className="Content">
-                        These guys handle your business like it is theirs. They go over and beyond to make sure you are satisfied. no cutting corners and no false services!
-                        </p>
-                    </div>
-                </Carousel.Item>
+                {commentList}
             </Carousel >
         </div>
     )

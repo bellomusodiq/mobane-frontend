@@ -5,10 +5,10 @@ import Image from '../assets/images/food.jpeg';
 
 const Product = props => (
     <div className="Product">
-        <img src={Image} alt="img" />
+        <img src={props.image} alt="img" />
         <div>
-            <p>Food Name</p>
-            <p>(also known name)</p>
+            <p>{props.title}</p>
+            <p>({props.aka})</p>
         </div>
     </div>
 )

@@ -9,3 +9,6 @@ a {
 html {
   scroll-behavior: smooth;
 }
+h1 {
+  font-family: Perpetua!important;
+}
