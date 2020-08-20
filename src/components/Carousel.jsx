@@ -7,12 +7,10 @@ const Carousel = props => {
 
     return (
         <div style={{backgroundImage: bannerImage}} className="Carousel">
-            <h1>Exporting Africa to you one</h1>
-            <h1>Ingredient at a time</h1>
+            <h1>Mobane Foods is your one stop online shop for all foods West African.</h1>
             <br/>
             <br/>
-            <p>We handle your business like it is ours. We go over and beyond to make sure</p>
-            <p>you are satified. No cutting corners and no false services!</p>
+            <p>We specialize in the distribution and exportation of West African food, trust us and we’d bring Africa right to you.</p>
             <a className="btn-" href="#ContactUs">Contact Us</a>
         </div>
     )
